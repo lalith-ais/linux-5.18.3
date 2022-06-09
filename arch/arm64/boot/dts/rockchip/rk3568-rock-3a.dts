@@ -678,7 +678,7 @@
 &pcie3x2 {
 	reset-gpios = <&gpio2 RK_PD6 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&pcie30_3v3>;
-	//num-lanes = <2>;
+	num-lanes = <2>;
 	pinctrl-0 = <&pcie30x2m1_pins>;
 	bus-scan-delay-ms = <1000>; 
 	status = "okay";
