@@ -1,1 +1,17 @@
-This is the kernel for Rock3, unstable
+This is the kernel for Rock3, everything works except  AR9462 interrupt
+
+<pre>
+root@base:/mnt# lspci
+0000:00:00.0 PCI bridge: Fuzhou Rockchip Electronics Co., Ltd Device 3566 (rev 01)
+0000:01:00.0 Network controller: Qualcomm Atheros AR9462 Wireless Network Adapter (rev 01)
+0002:20:00.0 PCI bridge: Fuzhou Rockchip Electronics Co., Ltd Device 3566 (rev 01)
+0002:21:00.0 Non-Volatile memory controller: Phison Electronics Corporation E12 NVMe Controller (rev 01)
+root@base:/mnt# hdparm -tT /dev/nvme0
+nvme0      nvme0n1    nvme0n1p1  
+root@base:/mnt# hdparm -tT /dev/nvme0n1p1 
+
+/dev/nvme0n1p1:
+ Timing cached reads:   2262 MB in  2.00 seconds = 1131.18 MB/sec
+ Timing buffered disk reads: 1804 MB in  3.00 seconds = 601.22 MB/sec
+root@base:/mnt# 
+</pre>
